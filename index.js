@@ -38,6 +38,7 @@ const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
 
 const monthlyRate = principal * (numerator/denominator);
 
+console.log(monthlyRate.toFixed(2));
 
 
 
@@ -46,7 +47,7 @@ const monthlyRate = principal * (numerator/denominator);
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-function mortgageCalculator(p, i, n) {
+function mortgageCalculator() {
     const monthlyInterestRate = i / 12;
     const periods = n * 12;
     const numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
@@ -57,7 +58,7 @@ function mortgageCalculator(p, i, n) {
     return `${name}, your monthly rate is ${monthlyRate.toFixed(2)}`;
 }
 
-console.log(`${name}, your monthly rate is ${monthlyRate.toFixed(2)}`);
+console.log(mortgageCalculator());
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -67,18 +68,17 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-function mortgageCalculator(p, i, n) {
-    const monthlyInterestRate = i / 12;
-    const periods = n * 12;
+    function mortgageCalculator(p, i, n) {
+    const monthlyInterestRate = interestRate / 12;
+    const periods = years * 12;
     const numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
     const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
-
     const monthlyRate = principal * (numerator/denominator);
 
-    return mortgageCalculator;
-}
+    return mortgageCalculator(200000, 0.05, 30);
+ }
 
-console.log(mortgageCalculator(200000, 0.05, 30));
+    console.log(mortgageCalculator());
 
 
 
@@ -87,22 +87,21 @@ console.log(mortgageCalculator(200000, 0.05, 30));
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
-function mortgageCalculator(creditScore, p, i, n) {
-    if (creditScore > 740) {
-        return (interestRate - 0.005);
+  function mortgageCalculator(creditScore, p, i, n) {
+  if (creditScore > 740) {
+  return (interestRate - 0.005);
     }
 
-    else if (creditScore < 660) {
-        return (interestRate + 0.005);
-    }
+  else if (creditScore < 660) {
+       return (interestRate + 0.005);    }
 
-    else  {
-        return (interestRate);
-    }
+  else  {
+       return (interestRate);
+     }
 
-}
+ }
 
-console.log(mortgageCalculator(700, 200000, 0.05, 30).toFixed(2));
+ console.log(mortgageCalculator(700, 200000, 0.05, 30).toFixed(2));
 
 
 
